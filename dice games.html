@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<title>simon game</title>
+<style>
+table{
+  padding: 10px 500px;
+  spacing: 220px;
+}
+td tr{
+spacing: 20px;
+}
+button{
+  width:  200px;
+  height: 200px;
+}
+body{
+  background-image: url("image_5564-Mars-Water.jpg");
+  background-repeat: no-repeat;
+  background-size:1350px;
+}
+
+ </style>
+<head>
+  <h3> start  the game</h3>
+</head>
+<body>
+<p id ="ds"> hi</p>
+
+<table>
+<tr>
+<td><img src ="dice1.png">Player1</img></td>
+<td><img src ="dice2.png">Player2</img></td>
+  </tr>
+
+  </table>
+  <p id ="sa"></p>
+  </body>
+  <script>
+
+let g = document.getElementsByTagName("img");
+let g1 = document.querySelectorAll("img");
+console.log(g1.length);
+for (let i = 0; i<g1.length;i++)
+{
+  g1[i].addEventListener("click",yu);
+
+}
+function yu(){
+  let p1 = Math.floor(Math.random()*6)+1;
+  let p2 = Math.floor(Math.random()*6)+1;
+  g[0].src="dice"+p1 +".png";
+  g[1].src="dice"+p2 +".png";
+  if (p1>p2){
+    document.getElementById("sa").innerHTML="Player 1 win the  game";
+
+  }
+  else if(p2>p1){
+    document.getElementById("sa").innerHTML="Player 2 win the  game";
+  }
+  else if(p2==p1){
+    document.getElementById("sa").innerHTML="tie win the  game";
+  }
+
+}
+    </script>
+  </html>
